@@ -1,1 +1,29 @@
 # cara-install-semua-di-vps-laravel-php8.0
+
+- `sudo apt update`
+- `sudo apt install nginx`
+- `sudo apt install mysql-server`
+- `sudo mysql_secure_installation`
+- `y`
+- `0`
+- `masukan new password`
+- `y`
+- `y`
+- `y`
+- `y`
+- `y`
+- `sudo apt install php php-cli php-fpm php-json php-common php-mysql php-zip php-gd php-mbstring php-curl php-xml php-pear php-bcmath php-tokenizer php-ctype`
+- `sudo apt remove apache2 apache2.*`
+- `sudo apt auto-remove`
+- `php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"`
+- `php -r "if (hash_file('sha384', 'composer-setup.php') === '906a84df04cea2aa72f40b5f787e49f22d4c2f19492ac310e8cba5b96ac8b64115ac402c8cd292b8a03482574915d1a8') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"`
+- `php composer-setup.php`
+- `php -r "unlink('composer-setup.php');"`
+- `sudo mv composer.phar /usr/local/bin/composer`
+- `mysql -u root -p`
+- `SHOW VARIABLES LIKE 'validate_password%';`
+- `SET GLOBAL validate_password.length = 4;`
+- `SET GLOBAL validate_password.number_count = 0;`
+- `SET GLOBAL validate_password.policy=LOW;`
+- `CREATE USER 'mrzf'@'%' IDENTIFIED BY 'mrzf';`
+- `GRANT ALL PRIVILEGES ON *.* TO 'mrzf'@'%';`
