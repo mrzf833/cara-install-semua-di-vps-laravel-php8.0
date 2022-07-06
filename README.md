@@ -20,7 +20,7 @@
 - `sudo apt remove apache2 apache2.*`
 - `sudo apt auto-remove`
 - `php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"`
-- `php -r "if (hash_file('sha384', 'composer-setup.php') === '906a84df04cea2aa72f40b5f787e49f22d4c2f19492ac310e8cba5b96ac8b64115ac402c8cd292b8a03482574915d1a8') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"`
+- `php -r "if (hash('SHA384', file_get_contents('composer-setup.php')) === '41e71d86b40f28e771d4bb662b997f79625196afcca95a5abf44391188c695c6c1456e16154c75a211d238cc3bc5cb47') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"`
 - `php composer-setup.php`
 - `php -r "unlink('composer-setup.php');"`
 - `sudo mv composer.phar /usr/local/bin/composer`
